@@ -4,11 +4,14 @@
   "description": "To do list with Express.js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon"
   },
   "author": "Cam Scherman",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
