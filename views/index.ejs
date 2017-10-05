@@ -3,9 +3,12 @@
 <div class="container-fluid">
     <h1>Welcome to your To Do list:</h1>
     <form action='/' method= 'POST'>
-
-        <textarea name="task" cols="80" rows="1"></textarea>
-        <input type="submit" value="submit">
+        <div class="form-group">
+         <label>Add task</label>   
+        <textarea name="task" class= 'form-control' cols="80" rows="1"></textarea>
+        </div>
+        <input class= "btn btn-outline-dark" type="submit" value="submit">
+        
     </form>
 
     <% if(!!task){%>
