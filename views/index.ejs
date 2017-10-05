@@ -11,10 +11,14 @@
         
     </form>
 
-    <% if(!!task){%>
+    <% if(!!list){%>
+        <ul>
         
-        <%= task %>
+        <% for(let item of list){ %>
+            <li><%= item.task %></li>
+        <%} %>
         
         <% }%>
+        </ul>
 <%- include('./partials/footer') %>
     </div>

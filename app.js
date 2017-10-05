@@ -4,6 +4,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 
 const app = Express()
+const index = require('./routes/index.js')
 app.set('view engine', 'ejs')
 
 // app.use((req, res, next) => {
@@ -19,21 +20,10 @@ app.use(Express.static(path.join(__dirname, 'public')))
 
 
 
-app.get('/', (req,res) =>{
-    
-    let task = null;
-    res.render("index", {task});
-
-})
-
-app.post('/', (req,res) => {
-    let {body} = req;
-    console.log(body);
-    res.render('index', body);
-})
 
 
 
+app.use('/', index);
 const PORT = 4545
 
 app.listen(PORT, () =>{
