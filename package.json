@@ -4,7 +4,8 @@
   "description": "To do list with Express.js",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "debug": "nodemon --inspect"
   },
   "author": "Cam Scherman",
   "license": "MIT",
