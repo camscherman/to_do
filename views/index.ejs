@@ -1,4 +1,17 @@
 
 <%- include('./partials/header') %>
-    <h1>Things To Do</h1>
+<div class="container-fluid">
+    <h1>Welcome to your To Do list:</h1>
+    <form action='/' method= 'POST'>
+
+        <textarea name="task" cols="80" rows="1"></textarea>
+        <input type="submit" value="submit">
+    </form>
+
+    <% if(!!task){%>
+        
+        <%= task %>
+        
+        <% }%>
 <%- include('./partials/footer') %>
+    </div>

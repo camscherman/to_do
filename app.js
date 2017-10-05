@@ -1,5 +1,6 @@
 const Express = require('express')
 const morgan = require('morgan')
+const path = require('path')
 const bodyParser = require('body-parser')
 
 const app = Express()
@@ -14,10 +15,21 @@ app.set('view engine', 'ejs')
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.use(Express.static(path.join(__dirname, 'public')))
+
 
 
 app.get('/', (req,res) =>{
-    res.render("index");
+    
+    let task = null;
+    res.render("index", {task});
+
+})
+
+app.post('/', (req,res) => {
+    let {body} = req;
+    console.log(body);
+    res.render('index', body);
 })
 
 
