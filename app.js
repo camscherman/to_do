@@ -1,7 +1,9 @@
 const Express = require('express')
 const morgan = require('morgan')
+const bodyParser = require('body-parser')
 
 const app = Express()
+app.set('view engine', 'ejs')
 
 // app.use((req, res, next) => {
     // const {method,path} = req;
@@ -10,9 +12,12 @@ const app = Express()
 // })
 
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: false}))
+
+
 
 app.get('/', (req,res) =>{
-    res.send("Hello, World");
+    res.render("index");
 })
 
 
